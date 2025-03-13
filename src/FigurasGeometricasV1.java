@@ -20,39 +20,50 @@ public class FigurasGeometricasV1 {
             return;
         }
 
-        if(option == 1){
+        switch(option){
+            case 1:
             System.out.println("Digite o valor do lado do quadrado:");
             double lado = scanner.nextDouble();
-            double area = lado * lado;
-            double perimetro = 4 * lado;
-            System.out.println("A área do quadrado é: " + area);
-            System.out.println("O perímetro do quadrado é: " + perimetro);
-        } else if(option == 2){
-            System.out.println("Digite o valor da base do retângulo:");
-            double base = scanner.nextDouble();
-            System.out.println("Digite o valor da altura do retângulo:");
-            double altura = scanner.nextDouble();
-            double area = base * altura;
-            double perimetro = 2 * (base + altura);
-            System.out.println("A área do retângulo é: " + area);
-            System.out.println("O perímetro do retângulo é: " + perimetro);
-        } else if(option == 3){
+            double areaQuadrado = lado * lado;
+            double perimetroQuadrado = 4 * lado;
+            System.out.println("A área do quadrado é: " + areaQuadrado);
+            System.out.println("O perímetro do quadrado é: " + perimetroQuadrado);
+            
+            case 2:
+            while (true) { 
+                System.out.println("Digite o valor da base do retângulo:");
+                double baseRetangulo = scanner.nextDouble();
+                System.out.println("Digite o valor da altura do retângulo:");
+                double alturaRetangulo = scanner.nextDouble();
+        
+                if (baseRetangulo == alturaRetangulo) {
+                    System.out.println("Os valores de base e altura devem ser diferentes. Tente novamente.");
+                }else {
+                    double areaRetangulo = baseRetangulo * alturaRetangulo;
+                    double perimetroRetangulo = 2 * (baseRetangulo + alturaRetangulo);
+                    System.out.println("A área do retângulo é: " + areaRetangulo);
+                    System.out.println("O perímetro do retângulo é: " + perimetroRetangulo);
+                    break; 
+                }
+            }
+            break;
+        
+            case 3:
             System.out.println("Digite o valor da base do triângulo:");
             double base = scanner.nextDouble();
             System.out.println("Digite o valor da altura do triângulo:");
             double altura = scanner.nextDouble();
             double area = (base * altura) / 2;
             System.out.println("A área do triângulo é: " + area);
-        } else if(option == 4){
+        
+            case 4:
             System.out.println("Digite o valor do raio do círculo:");
-            double raio = scanner.nextDouble();
-            double area = Math.PI * Math.pow(raio, 2);
-            double perimetro = 2 * Math.PI * raio;
-            System.out.println("A área do círculo é: " + area);
-            System.out.println("O perímetro do círculo é: " + perimetro);
-        } else {
-            System.out.println("Opção inválida.");
-        }
+            double raioCirculo = scanner.nextDouble();
+            double areaCirculo = Math.PI * Math.pow(raioCirculo, 2);
+            double perimetroCirculo = 2 * Math.PI * raioCirculo;
+            System.out.println("A área do círculo é: " + areaCirculo);
+            System.out.println("O perímetro do círculo é: " + perimetroCirculo);
+        } 
         scanner.close();
     }
 }
