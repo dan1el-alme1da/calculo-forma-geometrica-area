@@ -20,6 +20,11 @@ public class Main {
        System.out.println("Digite a base: ");
        double lado2 = scanner.nextDouble();
        bases[1] = new Retangulo(lado1, lado2);
+       if(lado1 != lado2){
+        System.out.println("Os valores de altura e base devem ser diferentes");
+       }else{
+        System.out.println("Calculando...");
+       }
        System.out.println("RETANGULO");
 
        System.out.println("Digite os valores do triangulo");
